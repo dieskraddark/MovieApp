@@ -1,17 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    movies: []
+    movies: {}
 };
 
 export const movieSlice = createSlice({
-    name: 'movieSlice',
+    name: 'movies',
     initialState,
     reducers: {
-        addmovies:(state, action )=>{
-            state.movies= action.payload
+        addmovies: (state, action) => {
+            state.movies = action.payload;
         }
     }
 });
-export const {addmovies}= movieSlice.actions;
+export const { addmovies } = movieSlice.actions;
+export const getAllMovies = (state)=>state.movies.movies;
 export default movieSlice.reducer;

@@ -8,10 +8,10 @@ export default function Header() {
         <div className='header'>
             <Link to="/">
                 <div className="logo">
-                    <i class='bx bxs-movie-play' ></i> <span></span>
-                     Movie App
+                <i class='bx bx-camera-movie'></i> <span></span>
+                    MovieApp
                 </div>
-            </Link>
+            </Link> 
             <ul className="navbar">
                 <li>  <Link to="/">Home  </Link></li>
                 <li>  <Link to="/">Movies  </Link></li>

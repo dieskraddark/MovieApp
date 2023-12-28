@@ -2,12 +2,10 @@
 
 
 .footer{
-    background: $bg-color;
+    background: none;
     display: flex;
-    color: $text-color;
+    color: $main-color;
     justify-content: center;
     align-items: center;
     height: 72px;
-    
-
 }

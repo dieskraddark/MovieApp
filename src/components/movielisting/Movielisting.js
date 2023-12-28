@@ -21,7 +21,6 @@ export default function Movielisting() {
   return (
     <div className="movie-wrapper">
       <div className="movie-list">
-        <h2>Movies</h2>
         <div className="movie-container">
           {renderMovies}
         </div>

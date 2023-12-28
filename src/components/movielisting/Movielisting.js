@@ -16,8 +16,7 @@ export default function Movielisting() {
     <div className='movie-reponse-error'>
       <h3>{movies.Error}</h3>
     </div>
-  );
-
+  )
 
   return (
     <div className="movie-wrapper">

@@ -1,20 +1,66 @@
-@import  "../../common/colors.scss";
+@import "../../common/colors.scss";
 
-.header{
-    background-color: $primary-color;
-    height: 72px;
-    padding: 0px 40px;
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 20px 100px;
+    // background-color: $main-color;
+
+    .navbar {
+        display: flex;
+        column-gap: 5rem;
+        list-style: none;
+
+        a::after {
+            content: "";
+            width: 0%;
+            height: 2px;
+            background-color: $main-color;
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            transition: 0.4s all linear;
+
+        }
+
+        a:hover::after {
+            width: 110%;
+            height: 2px;
+        }
+    }
+
+    li {
+        position: relative;
+    }
+
+    a {
+        font-size: 1rem;
+        font-weight: 500;
+        color: $bg-color;
+        
+
+    }
+
 }
 
-.logo{
-    color: $font-primary;
-    font-size: 20px;
+.logo {
+    color: $bg-color;
+    font-size: 1.1rem;
     font-weight: 600;
+
+    .bx {
+        font-size: 24px;
+        color: $main-color;
+    }
 }
-.user-image, .user-image img{
+
+.user-image,
+.user-image img {
     width: 38px;
     height: 38px;
 }

@@ -6,7 +6,7 @@ export default function Moviecard(props) {
     <div className='card-item'>
       <div className="class-inner">
         <div className="card-top">
-          <img src={data.Poster} alt={data.Title} />
+          <img src={data.Poster} alt={data.Title} width="80%" />
         </div>
         <div className="card-bottom">
           <div className="card-info">

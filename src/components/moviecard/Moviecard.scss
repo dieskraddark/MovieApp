@@ -2,7 +2,7 @@
 
 
 .card-item {
-    width: 20%;
+    width: 25%;
 
     .card-bottom {
         padding: 10px 0px;
@@ -10,19 +10,19 @@
 
     }
 
-    .card-info {
+    .card-info {    
         h3 {
             margin-bottom: 10px;
             font-weight: 500;
             font-size: 20px;
-            color:$font-primary ;
+            color:$text-color ;
             padding-right: 10%;
         }
         p{
             margin-bottom: 5px;
             font-weight: 500;
             font-size: 18px;
-            color:$font-primary ;
+            color:$text-color ;
         }
     }
 }

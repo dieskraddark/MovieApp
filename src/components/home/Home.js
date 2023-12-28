@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Movielisting from '../movielisting/Movielisting'
 import Movieapi from '../../common/apis/Movieapi'
 import { APIKEY } from '../../common/apis/Movieapikey'
-import { useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addmovies } from '../../features/movies/MovieSlice'
 
 export default function Home() {
@@ -11,9 +11,11 @@ export default function Home() {
 
   const fetchMovies = async () => {
     const movieTitle = "batman"
+
     try {
       const response = await Movieapi.get(`?apiKey=${APIKEY}&s=${movieTitle}&type=movie`)
       const movies = response.data;
+      console.log(typeof movies)
       dispatch(addmovies(movies));
     }
     catch (error) {
@@ -25,7 +27,7 @@ export default function Home() {
     fetchMovies();
 
   }, []);
-  
+
   return (
     <div>
       <div className="banner">

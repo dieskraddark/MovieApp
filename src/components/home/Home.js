@@ -11,10 +11,10 @@ export default function Home() {
   }
   useEffect(() => {
     dispatch(fetchAsyncMovie());
-
+    fetchMovies();
   }, [dispatch]);
 
-  return (
+  return (    
     <div>
       <div className="banner">
       </div>

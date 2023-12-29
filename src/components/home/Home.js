@@ -1,20 +1,18 @@
 import React, { useEffect } from 'react'
 import Movielisting from '../movielisting/Movielisting'
-import Movieapi from '../../common/apis/Movieapi'
-import { APIKEY } from '../../common/apis/Movieapikey'
 import { useDispatch } from 'react-redux'
-import { addmovies } from '../../features/movies/MovieSlice'
+import { fetchAsyncMovie } from '../../features/movies/MovieSlice'
 
 export default function Home() {
-
+  const dispatch = useDispatch();
   
 
   const fetchMovies = async () => {
   }
   useEffect(() => {
-    fetchMovies();
+    dispatch(fetchAsyncMovie());
 
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

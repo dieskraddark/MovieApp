@@ -7,8 +7,9 @@ export const fetchAsyncMovie = createAsyncThunk("movies/fetchAyncMovie", async (
     const movieTitle = "batman"
     try {
         const response = await Movieapi.get(`?apiKey=${APIKEY}&s=${movieTitle}&type=movie`);
-        const movies = response.data
+        const movies = response.data;
         return movies
+        
     }
     catch (error) {
         console.log('error fetching movies:', error);
@@ -28,13 +29,18 @@ export const movieSlice = createSlice({
             state.movies = action.payload;
         }
     },
-    extraReducers:{
-        [fetchAsyncMovie.pending]:()=>{
-            console.log("pending")
-        },
-        [fetchAsyncMovie.fulfilled]:()=>{
-            console.log("pending")
-        }
+    extraReducers:(builder)=> {
+        builder
+        .addCase(fetchAsyncMovie.pending ,(state) => {
+            console.log("pending");
+        })
+        .addCase(fetchAsyncMovie.fulfilled, (state, action) => {
+            console.log("pending");
+            return {...state, movies: action.payload};
+        })
+        .addCase(fetchAsyncMovie.rejected,(state)=>{
+            console.log("rejected");
+        });
     }
 });
 export const { addmovies } = movieSlice.actions;

@@ -18,18 +18,28 @@ export const fetchAsyncMovie = createAsyncThunk("movies/fetchAyncMovie", async (
     }
 })
 
+export const GetFullDetails = createAsyncThunk("movie/GetFullDetails", async (id) => {
+    try {
+        const response = await Movieapi.get(`?apikey=${APIKEY}&i=${id}&plot=full`);
+        const getDetails = response.data;
+        return getDetails;
+    } catch (error) {
+        console.log('error fetching movies:', error);
+    }
+})
+
 const initialState = {
     movies: {},
-    series: {} 
+    series: {},
+    getDetails: {},
 };
 
 export const movieSlice = createSlice({
     name: 'movies',
     initialState,
     reducers: {
-        addmovies: (state, action) => {
-            state.movies = action.payload.movies;
-            state.series = action.payload.series;
+        removeMovies: (state) => {
+            state.getDetails = {};
         }
     },
     extraReducers: (builder) => {
@@ -38,13 +48,15 @@ export const movieSlice = createSlice({
                 console.log("pending");
             })
             .addCase(fetchAsyncMovie.fulfilled, (state, action) => {
-                console.log("fullfilled");
-                return { ...state, movies: action.payload.movies, series:action.payload.series};
+                return { ...state, movies: action.payload.movies, series: action.payload.series };
             })
             .addCase(fetchAsyncMovie.rejected, () => {
                 console.log("rejected");
+            })
+            .addCase(GetFullDetails.fulfilled, (state, action) => {
+                return { ...state, getDetails: action.payload }
             });
     }
 });
-export const { addmovies } = movieSlice.actions;
+export const { removeMovies } = movieSlice.actions;
 export default movieSlice.reducer;

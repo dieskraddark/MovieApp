@@ -1,0 +1,44 @@
+ @import"../../common/colors.scss";
+
+ .main-content {
+
+     // background-image: linear-gradient(to right, #434343 0%, black 100%);
+     .poster {
+         opacity: .2;
+         position: absolute;
+         top: 72px;
+         right: 118px;  
+         height: 80%;
+         width: 30%;
+     }
+
+ }
+ .content-wrapper {
+     display: flex;
+     padding: 84px 20px;
+
+     .details {
+         padding-left: 40px;
+         margin-bottom: 10px;
+
+         .moredetails {
+             margin-top: 10px;
+
+             span {
+                 font-size: 15px;
+             }
+         }
+
+         h3 {
+             font-size: 50px;
+             margin-bottom: 15px;
+             font-weight: 600;
+         }
+
+         span {
+             margin-right: 25px;
+             font-size: 15px;
+
+         }
+     }
+ }

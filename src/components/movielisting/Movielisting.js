@@ -6,9 +6,10 @@ import './Movielisting.scss'
 export default function Movielisting() {
 
   const movies = useSelector(state => state.movies.movies);
-  const series = useSelector(state=> state.movies.series)
-  let renderShows ,renderMovies = "";
-
+  const series = useSelector(state=> state.movies.series);
+  console.log(series.Search);
+  let renderMovies, renderShows = "";
+  
   renderMovies = movies.Response === "True" ? (
     movies.Search.map((movie, index) => (
       <MovieCard key={index} data={movie} />
@@ -33,7 +34,6 @@ export default function Movielisting() {
       <div className="movie-list">
         <div className="movie-container">
           {renderMovies}
-          <h2>series</h2>
           {renderShows}
         </div>
       </div>

@@ -8,7 +8,7 @@ export default function Header() {
         <div className='header'>
             <Link to="/">
                 <div className="logo">
-                <i class='bx bx-camera-movie'></i> <span></span>
+                <i className='bx bx-camera-movie'></i> <span></span>
                     MovieApp
                 </div>
             </Link> 

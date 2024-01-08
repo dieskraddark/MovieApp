@@ -7,7 +7,6 @@ export default function Movielisting() {
 
   const movies = useSelector(state => state.movies.movies);
   const series = useSelector(state=> state.movies.series);
-  console.log(series.Search);
   let renderMovies, renderShows = "";
   
   renderMovies = movies.Response === "True" ? (

@@ -22,6 +22,7 @@ export const GetFullDetails = createAsyncThunk("movie/GetFullDetails", async (id
     try {
         const response = await Movieapi.get(`?apikey=${APIKEY}&i=${id}&plot=full`);
         const getDetails = response.data;
+        
         return getDetails;
     } catch (error) {
         console.log('error fetching movies:', error);
@@ -32,6 +33,7 @@ const initialState = {
     movies: {},
     series: {},
     getDetails: {},
+
 };
 
 export const movieSlice = createSlice({
@@ -39,7 +41,8 @@ export const movieSlice = createSlice({
     initialState,
     reducers: {
         removeMovies: (state) => {
-            state.getDetails = {};
+            state.getDetails = "";
+
         }
     },
     extraReducers: (builder) => {

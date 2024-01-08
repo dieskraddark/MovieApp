@@ -1,25 +1,53 @@
  @import"../../common/colors.scss";
 
- .main-content {
-
-     // background-image: linear-gradient(to right, #434343 0%, black 100%);
-     .poster {
-         opacity: .2;
-         position: absolute;
-         top: 72px;
-         right: 118px;  
-         height: 80%;
-         width: 30%;
-     }
-
+ .non-content {
+     display: none;
  }
+
  .content-wrapper {
      display: flex;
-     padding: 84px 20px;
+     padding: 87px 50px;
 
      .details {
          padding-left: 40px;
          margin-bottom: 10px;
+
+
+         .content-tabs {
+             .btn {
+                 display: flex;
+                 border-bottom: 2px solid $bg-color;
+                 margin: 25px 0px;
+
+
+
+                 .active {
+                     background-color: $main-color;
+                     transition: 0.4s all linear;
+                 }
+
+                 button {
+                     background-color: transparent;
+                     border: none;
+                     outline: none;
+                     padding: 14px 16px;
+                     color: $bg-color;
+                     font-size: 17px;
+                     margin-right: 48px;
+                 }
+
+             }
+
+             .content {
+                 padding: 0px 40px 0px 0px;
+
+                 .plot {
+                     font-size: 16px;
+                     line-height: 1.6;
+                 }
+
+             }
+         }
 
          .moredetails {
              margin-top: 10px;
@@ -30,7 +58,7 @@
          }
 
          h3 {
-             font-size: 50px;
+             font-size: 30px;
              margin-bottom: 15px;
              font-weight: 600;
          }
